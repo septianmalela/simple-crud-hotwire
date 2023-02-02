@@ -1,0 +1,2 @@
+<%= turbo_stream.remove(@inbox) if @inbox.errors.blank? %>
+<%= turbo_stream.update('flash_inbox', partial: 'inboxes/flash') %>

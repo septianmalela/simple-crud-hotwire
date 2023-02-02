@@ -1,8 +1,19 @@
 <%= form_with(model: inbox) do |form| %>
-  <div class="mb-3 col-md-3">
-    <%= form.label :name, style: "display: block" %>
-    <%= form.text_field :name, class: 'form-control' %>
+  <% new_record = form.object.new_record? %>
+  <div class="card mt-3">
+    <div class="card-header">
+      <%= new_record ? 'Create' : 'Update' %> new inbox
+    </div>
+    <div class="card-body">
+      <blockquote class="blockquote mb-0">
+        <div class="mb-3 row">
+          <%= form.label :name, class: 'col-sm-1 col-form-label' %>
+          <div class="col-sm-5">
+            <%= form.text_field :name, class: 'form-control' %>
+          </div>
+        </div>
+        <%= form.submit class: 'btn btn-primary mb-3' %>
+      </blockquote>
+    </div>
   </div>
-
-  <%= form.submit class: 'btn btn-sm btn-primary mb-3' %>
 <% end %>

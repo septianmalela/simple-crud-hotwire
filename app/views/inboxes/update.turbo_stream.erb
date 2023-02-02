@@ -1,0 +1,7 @@
+<% if @inbox.errors.blank? %>
+  <%= turbo_stream.update(@inbox, partial: 'inboxes/inbox', locals: { inbox: @inbox }) %>
+<% else %>
+  <%= turbo_stream.update(@inbox, partial: 'inboxes/form', locals: { inbox: @inbox }) %>
+<% end %>
+
+<%= turbo_stream.update('flash_inbox', partial: 'inboxes/flash') %>
