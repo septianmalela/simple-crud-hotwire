@@ -1,0 +1,16 @@
+<div class="container">
+  <h1>Inboxes</h1>
+
+  <div id="flash_inbox">
+    <%= render partial: 'inboxes/flash' %>
+  </div>
+
+  <div id="new_inbox">
+    <%= render partial: "inboxes/form", locals: { inbox: Inbox.new } %>
+  </div>
+
+  <%= turbo_stream_from "inboxes" %>
+  <%= turbo_frame_tag 'inboxes' do %>
+    <%= render @inboxes %>
+  <% end %>
+</div>

@@ -1,0 +1,10 @@
+<%= turbo_stream_from inbox %>
+<%= turbo_frame_tag inbox do %>
+  <div class="p-3 mb-4 bg-light rounded-3">
+    <div class="container-fluid">
+      <h1 class="display-5 fw-bold"><%= inbox.name %></h1>
+      <%= link_to "Edit this inbox", edit_inbox_path(inbox), class: 'btn btn-sm btn-warning', data: { turbo_method: :post } %>
+      <%= link_to "Destroy this inbox", inbox_path(inbox), class: 'btn btn-sm btn-danger', data: { turbo_method: :delete, turbo_confirm: 'Are you sure?' } %>
+    </div>
+  </div>
+<% end %>

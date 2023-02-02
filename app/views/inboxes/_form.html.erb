@@ -1,0 +1,8 @@
+<%= form_with(model: inbox) do |form| %>
+  <div class="mb-3 col-md-3">
+    <%= form.label :name, style: "display: block" %>
+    <%= form.text_field :name, class: 'form-control' %>
+  </div>
+
+  <%= form.submit class: 'btn btn-sm btn-primary mb-3' %>
+<% end %>
